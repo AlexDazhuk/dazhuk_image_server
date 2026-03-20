@@ -1,0 +1,90 @@
+/* ==========================================================================
+   List View - Shared Layout Contract
+   ==========================================================================
+   Призначення:
+   - задає базовий layout для списків Images і DB Gallery;
+   - містить тільки універсальні стилі (без колонок і поведінки тексту);
+   - не втручається у логіку обрізання, переносу чи ширини колонок;
+   - використовується як спільний каркас для list-based сторінок.
+   ========================================================================== */
+
+/* 1. List wrapper */
+.file-list-container {
+    width: 100%;
+    margin: 0 auto 16px;
+    padding: 20px 24px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* 2. Inner container */
+.file-list-inner {
+    width: max-content;
+    min-width: 480px;
+    margin: 0 auto;
+}
+
+/* 3. Row layout contract */
+.file-list-header,
+.file-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    min-width: 500px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eef0f5;
+}
+
+/* 4. Last row cleanup */
+.file-list-item:last-child {
+    border-bottom: none;
+}
+
+/* 5. Header typography */
+.file-list-header {
+    color: #8a96b1;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* 6. Item typography */
+.file-list-item {
+    color: #333;
+    font-size: 14px;
+}
+
+/* 7. Shared cell contract */
+.file-col {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+/* 8. Message / empty state */
+.file-col-message {
+    flex-basis: 100%;
+    justify-content: center;
+    text-align: center;
+    color: #8a96b1;
+    font-size: 14px;
+    padding: 24px 0;
+}
+
+/* 9. File icon */
+.file-icon {
+    color: #0060ff;
+    margin-right: 15px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* 10. File icon image */
+.file-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}

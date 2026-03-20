@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Confirm Modal - Layout Contract
+   ==========================================================================
+   Призначення:
+   - відповідає за кастомне confirm-вікно;
+   - використовується для підтвердження delete-дій;
+   - забезпечує overlay, modal card, текст і кнопки дії.
+   ========================================================================== */
+
+/* 1. Modal root */
+.confirm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+}
+
+/* 2. Hidden state */
+.confirm-modal.hidden {
+    display: none;
+}
+
+/* 3. Modal overlay */
+.confirm-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* 4. Modal content */
+.confirm-modal__content {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* 5. Modal title */
+.confirm-modal__title {
+    font-size: 16px;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* 6. Modal text */
+.confirm-modal__text {
+    font-size: 14px;
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 6px;
+    max-width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 7. Modal text secondary */
+.confirm-modal__text--secondary {
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* 8. Modal actions */
+.confirm-modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* 9. Modal button base */
+.confirm-modal__btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 10. Cancel button */
+.confirm-modal__btn--cancel {
+    background: #f1f5f9;
+    color: #111827;
+}
+
+/* 11. Danger button */
+.confirm-modal__btn--danger {
+    background: #ef4444;
+    color: white;
+}
+
+/* ==========================================================================
+   Buttons - Hover & Active States
+   ========================================================================== */
+
+/* 12. Cancel hover */
+.confirm-modal__btn--cancel:hover {
+    background: #e2e8f0;
+}
+
+/* 13. Cancel active (click) */
+.confirm-modal__btn--cancel:active {
+    background: #cbd5f5;
+}
+
+/* 14. Danger hover */
+.confirm-modal__btn--danger:hover {
+    background: #dc2626;
+}
+
+/* 15. Danger active */
+.confirm-modal__btn--danger:active {
+    background: #b91c1c;
+}
+
+/* 16. Optional: smooth interaction */
+.confirm-modal__btn {
+    transition: background 0.2s ease, transform 0.05s ease;
+}
+
+/* 17. Optional: slight press effect */
+.confirm-modal__btn:active {
+    transform: scale(0.97);
+}

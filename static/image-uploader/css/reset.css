@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Reset - Global Reset Styles
+   ==========================================================================
+   Призначення:
+   - нормалізує стандартні стилі браузера;
+   - прибирає дефолтні відступи, списки та поведінку елементів;
+   - забезпечує однакову базу для всіх сторінок.
+   ========================================================================== */
+
+/* 1. Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove inner padding (lists) */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* 3. Remove outer margins */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* 4. Base body defaults */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* 5. Remove list styles */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* 6. Links reset (without class) */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* 7. Images reset */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 8. Article spacing */
+article>*+* {
+    margin-top: 1em;
+}
+
+/* 9. Form elements inherit font */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}

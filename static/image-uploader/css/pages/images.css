@@ -1,0 +1,108 @@
+/* ========================================================================== 
+   Images - Fixed Column Layout Contract
+   ========================================================================== 
+   Призначення:
+   - залишає колонки сторінки Images: name, url, actions;
+   - застосовує до них компактний layout у стилі DB Gallery;
+   - задає фіксовану ширину колонок;
+   - задає єдину схему внутрішніх відступів;
+   - не дозволяє таблиці "плисти" при довгих значеннях;
+   - обрізає url в один рядок через ellipsis;
+   - центрує колонку actions.
+   ========================================================================== */
+
+/* 1. Row layout contract */
+.file-list-header,
+.file-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+/* 2. Shared column contract */
+.file-col {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 0 20px;
+}
+
+/* 3. Fixed column widths */
+.file-col-name {
+    flex: 0 0 400px;
+}
+
+.file-col-url {
+    flex: 0 0 360px;
+}
+
+.file-col-size {
+    flex: 0 0 110px;
+}
+
+.file-col-actions {
+    flex: 0 0 100px;
+}
+
+/* 4. Name column content */
+.file-list-item .file-col-name .file-name {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #3f3f46;
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* 5. URL column content */
+.file-list-item .file-col-url a {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #2563eb;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-list-item .file-col-url a:hover {
+    text-decoration: underline;
+    background: rgba(0, 96, 255, 0.04);
+}
+
+/* 6. Size column content */
+.file-list-item .file-col-size {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+/* 7. Actions alignment */
+.file-list-header .file-col-actions,
+.file-list-item .file-col-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 8. Header text rules */
+.file-list-header .file-col-name,
+.file-list-header .file-col-url,
+.file-list-header .file-col-actions {
+    white-space: nowrap;
+}
+
+/* 9. Actions content rules */
+.file-list-item .file-col-actions {
+    color: #111827;
+    white-space: nowrap;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Server</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/image-uploader/css/reset.css">
+    <link rel="stylesheet" href="/image-uploader/css/base.css">
+
+    <link rel="stylesheet" href="/image-uploader/css/components/tabs.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/buttons.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/toast.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/list-view.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/pagination.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/image-preview.css">
+    <link rel="stylesheet" href="/image-uploader/css/components/confirm.css">
+
+    <link rel="stylesheet" href="/image-uploader/css/pages/db-gallery.css">
+    <link rel="stylesheet" href="/image-uploader/css/pages/upload.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="upload__intro">
+        <h2 class="upload__title">Upload Photos</h2>
+        <p class="upload__description">Images stored in database</p>
+    </section>
+
+    <nav class="upload__tabs">
+        <button class="upload__tab" id="upload-tab-btn">Upload</button>
+        <button class="upload__tab" id="images-tab-btn">Images</button>
+        <button class="upload__tab upload__tab--active" id="db-gallery-tab-btn">DB Gallery</button>
+    </nav>
+
+    <section id="file-list-wrapper"></section>
+
+    <script src="/image-uploader/js/image-actions.js"></script>
+    <script type="module" src="/image-uploader/js/db-gallery.js"></script>
+
+    <div id="confirm-modal" class="confirm-modal hidden">
+        <div class="confirm-modal__overlay"></div>
+
+        <div class="confirm-modal__content">
+            <h3 class="confirm-modal__title">Delete image</h3>
+
+            <p class="confirm-modal__text"></p>
+
+            <p class="confirm-modal__text confirm-modal__text--secondary"></p>
+
+            <div class="confirm-modal__actions">
+                <button class="confirm-modal__btn confirm-modal__btn--cancel">
+                    Cancel
+                </button>
+                <button class="confirm-modal__btn confirm-modal__btn--danger">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

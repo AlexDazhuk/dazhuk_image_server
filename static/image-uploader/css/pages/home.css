@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Header & Hero - Layout Contract
+   ==========================================================================
+   Призначення:
+   - відповідає за верхню частину сторінки (Header);
+   - керує кнопкою дії (CTA);
+   - відповідає за hero-блок і зображення.
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Background
+   ========================================================================== */
+
+/* 1. Body background */
+body {
+    background-color: #151515;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+/* 2. Header container */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+/* 3. Header title */
+.header__title {
+    text-align: center;
+    font-size: 16px;
+    width: 700px;
+}
+
+/* 4. Header description text */
+.header__text {
+    padding-top: 4px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Header Button (CTA)
+   ========================================================================== */
+
+/* 5. Button container */
+.header__button {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+/* 6. Button element */
+.header__button-btn {
+    position: absolute;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    font-size: 12px;
+    background-color: rgb(0, 96, 255);
+    color: rgb(255, 255, 255);
+    width: 160px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+/* 7. Hero container */
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* 8. Hero image (default state) */
+.hero__img {
+    display: none;
+}
+
+/* 9. Hero image (visible state) */
+.hero__img.is-visible {
+    display: block;
+}
+
+/* 10. Hero image content */
+.img {
+    width: 426px;
+    height: 559px;
+    object-fit: cover;
+}

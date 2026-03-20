@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Upload Tabs - Navigation Contract
+   ==========================================================================
+   Призначення:
+   - відповідає за таби на сторінці Upload;
+   - забезпечує центрування та відступи між табами;
+   - керує станами: default / hover / active.
+   ========================================================================== */
+
+/* 1. Tabs container */
+.upload__tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+/* 2. Tab base */
+.upload__tab {
+    all: unset;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(173, 192, 248);
+    cursor: pointer;
+}
+
+/* 3. Tab active state */
+.upload__tab--active {
+    color: rgb(0, 96, 255);
+}
+
+/* 4. Tab hover state */
+.upload__tab:hover {
+    color: rgb(105, 141, 250);
+}

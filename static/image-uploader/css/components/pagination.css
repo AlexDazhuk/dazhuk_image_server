@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Pagination - Layout Contract
+   ==========================================================================
+   Призначення:
+   - задає layout пагінації для сторінок Images і DB Gallery;
+   - забезпечує центрування блоку та рівномірний розподіл зон;
+   - розділяє пагінацію на 3 області: left / center / right;
+   - не залежить від ширини таблиці (керується окремо).
+   ========================================================================== */
+
+/* 1. Pagination wrapper */
+.pagination {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 8px auto 16px;
+    padding: 12px 0;
+}
+
+/* 2. Pagination zones (left / center / right) */
+.pagination__left,
+.pagination__center,
+.pagination__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 3. Left zone (Prev button) */
+.pagination__left {
+    display: flex;
+    justify-content: center; /* центримо Prev */
+}
+
+/* 4. Center zone (page info + Next) */
+.pagination__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* 5. Right zone (rows selector) */
+.pagination__right {
+    display: flex;
+    justify-content: flex-end; /* 👉 вправо */
+    align-items: center;
+    gap: 8px;
+}
+
+/* 6. Labels */
+.pagination__label {
+    font-size: 13px;
+    color: #667085;
+    white-space: nowrap;
+}
+
+/* 7. Select (rows per page) */
+.pagination__select {
+    width: 64px;
+    height: 32px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-right: 28px;
+    font-size: 14px;
+    color: #344054;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+/* 8. Select focus state */
+.pagination__select:focus {
+    border-color: #98b2ff;
+}
+
+/* 9. Select wrapper */
+.pagination__select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* 10. Select arrow icon */
+.pagination__select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+}
+
+/* 11. Page info text */
+.pagination__info {
+    font-size: 14px;
+    font-weight: 500;
+    color: #475467;
+    white-space: nowrap;
+}
+
+/* 12. Buttons */
+.pagination__button {
+    height: 32px;
+    min-width: 64px;
+    padding: 0 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: #fff;
+    color: #344054;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* 13. Button hover */
+.pagination__button:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #bfc8d8;
+}
+
+/* 14. Button disabled state */
+.pagination__button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+/* ==========================================================================
+   Pagination - Page Navigation Controls
+   ========================================================================== */
+
+/* 15. Ellipsis (skipped pages indicator) */
+.pagination__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    color: #98a2b3;
+}
+
+/* 16. Page button (default state) */
+.pagination__page {
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* 17. Page button hover */
+.pagination__page:hover:not(.is-active) {
+    background: #f1f5f9;
+    border-color: #d0d5dd;
+    color: #1d4ed8;
+}
+
+/* 18. Page button (active state) */
+.pagination__page.is-active {
+    border-color: #d0d5dd;
+    color: #1d4ed8;
+}

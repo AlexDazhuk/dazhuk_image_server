@@ -1,0 +1,126 @@
+/* ========================================================================== 
+   DB Gallery - Fixed Column Layout Contract
+   ========================================================================== 
+   Призначення:
+   - задає фіксовану ширину колонок у таблиці DB Gallery;
+   - задає єдину схему відступів між колонками через row layout;
+   - не дозволяє таблиці "плисти" при довгих назвах файлів;
+   - не обрізає stored_name;
+   - обрізає original_name до 2 рядків;
+   - примушує created_at показуватися у 2 рядки: дата + час.
+   ========================================================================== */
+
+/* 1. Row layout contract */
+.file-list-header,
+.file-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+/* 2. Shared column contract */
+.file-col {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 0 20px;
+}
+
+/* 3. Fixed column widths */
+.file-col-stored-name {
+    flex: 0 0 360px;
+}
+
+.file-col-original-name {
+    flex: 0 0 200px;
+}
+
+.file-col-size {
+    flex: 0 0 110px;
+}
+
+.file-col-created-at {
+    flex: 0 0 120px;
+}
+
+.file-col-extension {
+    flex: 0 0 100px;
+}
+
+.file-col-actions {
+    flex: 0 0 100px;
+}
+
+/* 4. Stored Name column content */
+.file-list-item .file-col-stored-name a {
+    display: block;
+    width: 100%;
+    color: #2563eb;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.file-list-item .file-col-stored-name a:hover {
+    text-decoration: underline;
+    background: rgba(0, 96, 255, 0.04);
+}
+
+/* 5. Original Name column content */
+.file-list-item .file-col-original-name {
+    overflow: hidden;
+    color: #3f3f46;
+    font-size: 14px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* 6. Service columns text styling */
+.file-list-item .file-col-size,
+.file-list-item .file-col-extension {
+    color: #52525b;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+/* 7. Created At formatting */
+.file-list-item .file-col-created-at {
+    color: #52525b;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+/* 8. Extension and Actions alignment */
+.file-list-header .file-col-extension,
+.file-list-item .file-col-extension,
+.file-list-header .file-col-actions,
+.file-list-item .file-col-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 9. Header text rules */
+.file-list-header .file-col-size,
+.file-list-header .file-col-created-at,
+.file-list-header .file-col-extension,
+.file-list-header .file-col-actions {
+    white-space: nowrap;
+}
+
+/* 10. Actions content rules */
+.file-list-item .file-col-actions {
+    color: #111827;
+    white-space: nowrap;
+}

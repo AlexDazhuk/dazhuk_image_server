@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment variables
+.env
+
+.claude
+
+# backups
+backups/*
+!backups/.gitkeep
+
+# images
+images/*
+!images/.gitkeep
+
+# logs
+logs/*
+!logs/.gitkeep
+
+# database dumps
+*.sql
+*.dump

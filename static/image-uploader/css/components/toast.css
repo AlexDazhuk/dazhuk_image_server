@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Toast - Notification System
+   ==========================================================================
+   Призначення:
+   - відповідає за відображення toast-повідомлень;
+   - використовується для success / error / info повідомлень;
+   - забезпечує позиціонування, анімацію та кольорові стани.
+   ========================================================================== */
+
+/* 1. Toast container */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+/* 2. Toast base */
+.toast {
+    min-width: 220px;
+    max-width: 360px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #e5eaf3;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* 3. Toast visible state */
+.toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. Toast success */
+.toast--success {
+    border-color: #b7ebc6;
+    background: #f3fff6;
+    color: #166534;
+}
+
+/* 5. Toast error */
+.toast--error {
+    border-color: #f3b7bd;
+    background: #fff5f5;
+    color: #b42318;
+}
+
+/* 6. Toast info */
+.toast--info {
+    border-color: #dbe7ff;
+    background: #f7faff;
+    color: #1d4ed8;
+}
